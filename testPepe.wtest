@@ -2,19 +2,68 @@ import pepe.*
 import bonos.*
 import categorias.*
 
+describe "sueldo pepe unqui" {
+	test "Test inicial 1" {
+		/* esta parte está comentada porque falta agregar los métodos
+		 * correspondientes en el objeto pepe. 
+		 * Descomentar las cuatro líneas que siguen para que el test funcione correctamente. 
+		 */
+
+		pepe.setCategoria(cadete)
+		pepe.setBonoResultado(bonoMontoFijo)
+		pepe.setBonoPresentismo(bonoPresentismoNormal)
+		pepe.setCantidadFaltas(3)
+		
+		assert.equals(20000 + 800 + 0, pepe.sueldo())
+	}
+
+	
+}
+
+
 describe "sueldo pepe" {
 	test "Test inicial 1" {
 		/* esta parte está comentada porque falta agregar los métodos
 		 * correspondientes en el objeto pepe. 
 		 * Descomentar las cuatro líneas que siguen para que el test funcione correctamente. 
 		 */
-//		pepe.setCategoria(cadete)
-//		pepe.setBonoResultado(bonoMontoFijo)
-//		pepe.setBonoPresentismo(bonoPresentismoNormal)
-//		pepe.setCantidadDeFaltas(3)
+
+		 medioTiempo.categoriaBase(cadete)
+		 pepe.cambiarCategoria(medioTiempo)
+		 pepe.cambiarBonoResultado(bonoPorcentaje)
+		 pepe.cambiarBonoPresentismo(bonoPresentismoDemagogico)
+		 pepe.contarFalta()
 		
-		assert.equals(20000 + 800 + 0, pepe.sueldo())
+		 assert.equals(11500, pepe.sueldo())
+		
 	}
 
-	
+	test "Test inicial roque" {
+		/* esta parte está comentada porque falta agregar los métodos
+		 * correspondientes en el objeto pepe. 
+		 * Descomentar las cuatro líneas que siguen para que el test funcione correctamente. 
+		 */
+
+		 //medioTiempo.categoriaBase(cadete)
+		 //roque.cambiarCategoria(medioTiempo)
+		 roque.cambiarBonoResultado(bonoMontoFijo)
+		 pepe.cambiarBonoPresentismo(bonoPresentismoDemagogico)
+		 assert.equals(37800, roque.sueldo())
+		
+	}
+
+	test "Test inicial ernesto" {
+		/* esta parte está comentada porque falta agregar los métodos
+		 * correspondientes en el objeto pepe. 
+		 * Descomentar las cuatro líneas que siguen para que el test funcione correctamente. 
+		 */
+
+		 medioTiempo.categoriaBase(cadete)
+		 pepe.cambiarCategoria(medioTiempo)
+		 ernesto.nuevoCompañero(pepe)
+		 ernesto.cambiarBonoPresentismo(bonoPresentismoAjuste)
+		 assert.equals(10100, ernesto.sueldo())
+		
+	}
+
 }
